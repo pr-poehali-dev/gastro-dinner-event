@@ -14,28 +14,28 @@ const Index = () => {
       name: "Жан-Пьер Дюбуа",
       cuisine: "Французская кухня",
       restaurant: "Le Château",
-      image: "👨‍🍳",
+      image: "https://cdn.poehali.dev/projects/cea87fd4-0ec0-4031-8968-e260380c4b40/files/1ea244ad-d1da-4f02-ae54-8d0b69b3f35d.jpg",
       description: "Звезда Michelin, специалист по классической французской кухне"
     },
     {
       name: "Масато Танака",
       cuisine: "Японская кухня",
       restaurant: "Sakura Dreams",
-      image: "👨‍🍳",
+      image: "https://cdn.poehali.dev/projects/cea87fd4-0ec0-4031-8968-e260380c4b40/files/9578d2e2-f76e-4be7-83a8-192bf857748b.jpg",
       description: "Мастер суши с 20-летним стажем из Токио"
     },
     {
       name: "Антонио Марчелли",
       cuisine: "Итальянская кухня",
       restaurant: "Bella Napoli",
-      image: "👨‍🍳",
+      image: "https://cdn.poehali.dev/projects/cea87fd4-0ec0-4031-8968-e260380c4b40/files/64a2ee6e-5529-474b-9a3b-d8f68d3e413f.jpg",
       description: "Эксперт по аутентичной неаполитанской кухне"
     },
     {
       name: "Елена Петрова",
       cuisine: "Русская кухня",
       restaurant: "Царская трапеза",
-      image: "👩‍🍳",
+      image: "https://cdn.poehali.dev/projects/cea87fd4-0ec0-4031-8968-e260380c4b40/files/7660c1a3-13a8-49e9-8295-8e2522f543c0.jpg",
       description: "Лучший шеф-повар современной русской кухни"
     }
   ];
@@ -254,8 +254,13 @@ const Index = () => {
             {chefs.map((chef, index) => (
               <Card key={index} className="group hover-scale bg-card/80 backdrop-blur-sm border-border/50 overflow-hidden">
                 <CardContent className="p-0">
-                  <div className="h-48 bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center text-8xl">
-                    {chef.image}
+                  <div className="relative h-64 overflow-hidden">
+                    <img 
+                      src={chef.image} 
+                      alt={chef.name}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent opacity-80"></div>
                   </div>
                   <div className="p-6">
                     <h3 className="text-xl font-bold mb-2">{chef.name}</h3>
