@@ -6,7 +6,7 @@ import { Textarea } from "@/components/ui/textarea";
 import Icon from "@/components/ui/icon";
 
 const Index = () => {
-  const [availableSeats, setAvailableSeats] = useState(150);
+  const [availableSeats] = useState(150);
   const totalSeats = 200;
 
   const chefs = [
@@ -120,7 +120,6 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
-      {/* Navigation */}
       <nav className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md border-b border-border">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
           <h1 className="text-2xl font-bold gradient-text">Гастроужин</h1>
@@ -139,7 +138,6 @@ const Index = () => {
         </div>
       </nav>
 
-      {/* Hero Section */}
       <section className="pt-32 pb-20 px-4 relative overflow-hidden">
         <div className="absolute inset-0 gradient-purple-orange opacity-20"></div>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(155,135,245,0.1),transparent_50%)]"></div>
@@ -175,7 +173,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Concept Section */}
       <section id="concept" className="py-20 px-4 bg-card/50">
         <div className="container mx-auto">
           <h2 className="text-5xl font-bold text-center mb-12 gradient-text">
@@ -216,7 +213,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Chefs Section */}
       <section id="chefs" className="py-20 px-4">
         <div className="container mx-auto">
           <h2 className="text-5xl font-bold text-center mb-12 gradient-text">
@@ -243,7 +239,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Restaurants Section */}
       <section id="restaurants" className="py-20 px-4 bg-card/30">
         <div className="container mx-auto">
           <h2 className="text-5xl font-bold text-center mb-12 gradient-text">
@@ -265,7 +260,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Program Section */}
       <section id="program" className="py-20 px-4">
         <div className="container mx-auto max-w-4xl">
           <h2 className="text-5xl font-bold text-center mb-12 gradient-text">
@@ -290,7 +284,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Drinks Section */}
       <section id="drinks" className="py-20 px-4 bg-card/30">
         <div className="container mx-auto">
           <h2 className="text-5xl font-bold text-center mb-12 gradient-text">
@@ -318,7 +311,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Cigar Lounge Section */}
       <section id="cigar" className="py-20 px-4 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-accent/20 via-background to-primary/10"></div>
         
@@ -427,7 +419,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Booking Section */
       <section id="booking" className="py-20 px-4 relative overflow-hidden">
         <div className="absolute inset-0 gradient-purple-orange opacity-10"></div>
         
@@ -483,7 +474,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Contact Section */}
       <section className="py-20 px-4 bg-card/50">
         <div className="container mx-auto max-w-4xl text-center">
           <h2 className="text-4xl font-bold mb-8 gradient-text">Контакты</h2>
@@ -492,7 +482,7 @@ const Index = () => {
             <div className="flex flex-col items-center gap-3">
               <Icon name="MapPin" size={32} className="text-primary" />
               <h3 className="font-semibold text-lg">Место проведения</h3>
-              <p className="text-muted-foreground">Банкетный зал "Резиденция"<br/>ул. Примерная, 123</p>
+              <p className="text-muted-foreground">Банкетный зал &quot;Резиденция&quot;<br/>ул. Примерная, 123</p>
             </div>
             
             <div className="flex flex-col items-center gap-3">
@@ -510,7 +500,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Footer */}
       <footer className="py-8 px-4 border-t border-border">
         <div className="container mx-auto text-center text-muted-foreground">
           <p>&copy; 2026 Симфония Вкуса. Незабываемый гастрономический опыт.</p>
