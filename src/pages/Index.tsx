@@ -44,26 +44,57 @@ const Index = () => {
     {
       name: "Le Château",
       cuisine: "Французская",
-      specialty: "Фуа-гра, трюфели",
+      description: "Звезда Michelin с классической французской кухней",
+      image: "https://cdn.poehali.dev/projects/cea87fd4-0ec0-4031-8968-e260380c4b40/files/e9aa7a00-d538-47c6-b021-56ae49ec86e2.jpg",
       icon: "🇫🇷"
     },
     {
       name: "Sakura Dreams",
       cuisine: "Японская",
-      specialty: "Суши, сашими",
+      description: "Аутентичная японская кухня из Токио",
+      image: "https://cdn.poehali.dev/projects/cea87fd4-0ec0-4031-8968-e260380c4b40/files/13fb9cba-fec9-49ac-af84-4d205aa54db1.jpg",
       icon: "🇯🇵"
     },
     {
       name: "Bella Napoli",
       cuisine: "Итальянская",
-      specialty: "Паста, ризотто",
+      description: "Неаполитанские традиции и домашний уют",
+      image: "https://cdn.poehali.dev/projects/cea87fd4-0ec0-4031-8968-e260380c4b40/files/24c4be73-d6f4-4d32-ba02-f39834321333.jpg",
       icon: "🇮🇹"
     },
     {
       name: "Царская трапеза",
       cuisine: "Русская",
-      specialty: "Осетрина, икра",
+      description: "Современная интерпретация русской классики",
+      image: "https://cdn.poehali.dev/projects/cea87fd4-0ec0-4031-8968-e260380c4b40/files/244a3614-b642-4c38-9423-ca3b43ea78cd.jpg",
       icon: "🇷🇺"
+    }
+  ];
+
+  const cuisines = [
+    {
+      country: "Франция",
+      icon: "🇫🇷",
+      dishes: ["Фуа-гра с трюфельным кремом", "Буйабес провансаль", "Утиное конфи"],
+      image: "https://cdn.poehali.dev/projects/cea87fd4-0ec0-4031-8968-e260380c4b40/files/82d8b7ab-81c7-4e33-8e5a-1e85b40bbc91.jpg"
+    },
+    {
+      country: "Япония",
+      icon: "🇯🇵",
+      dishes: ["Сашими из тунца отори", "Суши омакасе", "Вагю терияки"],
+      image: "https://cdn.poehali.dev/projects/cea87fd4-0ec0-4031-8968-e260380c4b40/files/0d9a1f33-931c-48ad-a1a9-4112b609f8d4.jpg"
+    },
+    {
+      country: "Италия",
+      icon: "🇮🇹",
+      dishes: ["Паста карбонара с трюфелем", "Ризотто с белыми грибами", "Тирамису"],
+      image: "https://cdn.poehali.dev/projects/cea87fd4-0ec0-4031-8968-e260380c4b40/files/5716ea4d-e1da-4c7c-b4d9-057111473420.jpg"
+    },
+    {
+      country: "Россия",
+      icon: "🇷🇺",
+      dishes: ["Осетрина царская", "Черная икра на блинах", "Строганов из мраморной говядины"],
+      image: "https://cdn.poehali.dev/projects/cea87fd4-0ec0-4031-8968-e260380c4b40/files/085c247a-97fa-4086-ad81-f09f2f3e8d7c.jpg"
     }
   ];
 
@@ -245,14 +276,66 @@ const Index = () => {
             Рестораны-участники
           </h2>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
             {restaurants.map((restaurant, index) => (
-              <Card key={index} className="hover-scale bg-gradient-to-br from-card to-card/50 border-primary/20">
-                <CardContent className="p-6 text-center">
-                  <div className="text-6xl mb-4">{restaurant.icon}</div>
-                  <h3 className="text-2xl font-bold mb-2">{restaurant.name}</h3>
-                  <p className="text-primary font-semibold mb-2">{restaurant.cuisine}</p>
-                  <p className="text-sm text-muted-foreground">{restaurant.specialty}</p>
+              <Card key={index} className="group hover-scale bg-card/80 backdrop-blur-sm border-primary/20 overflow-hidden">
+                <CardContent className="p-0">
+                  <div className="relative h-64 overflow-hidden">
+                    <img 
+                      src={restaurant.image} 
+                      alt={restaurant.name}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    />
+                    <div className="absolute top-4 right-4 text-5xl">{restaurant.icon}</div>
+                  </div>
+                  <div className="p-6">
+                    <h3 className="text-2xl font-bold mb-2">{restaurant.name}</h3>
+                    <p className="text-primary font-semibold mb-3">{restaurant.cuisine} кухня</p>
+                    <p className="text-muted-foreground">{restaurant.description}</p>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 px-4">
+        <div className="container mx-auto">
+          <h2 className="text-5xl font-bold text-center mb-6 gradient-text">
+            Кухни мира
+          </h2>
+          
+          <p className="text-center text-muted-foreground mb-12 text-lg max-w-3xl mx-auto">
+            Авторские блюда от шефов из разных стран — настоящее путешествие вкусов
+          </p>
+          
+          <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+            {cuisines.map((cuisine, index) => (
+              <Card key={index} className="group hover-scale bg-gradient-to-br from-card/90 to-card/70 backdrop-blur-sm border-accent/20 overflow-hidden">
+                <CardContent className="p-0">
+                  <div className="relative h-72 overflow-hidden">
+                    <img 
+                      src={cuisine.image} 
+                      alt={cuisine.country}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/40 to-transparent"></div>
+                    <div className="absolute bottom-4 left-4 flex items-center gap-3">
+                      <span className="text-5xl">{cuisine.icon}</span>
+                      <h3 className="text-3xl font-bold">{cuisine.country}</h3>
+                    </div>
+                  </div>
+                  <div className="p-6">
+                    <ul className="space-y-3">
+                      {cuisine.dishes.map((dish, idx) => (
+                        <li key={idx} className="flex items-start gap-3">
+                          <Icon name="ChefHat" size={20} className="text-accent flex-shrink-0 mt-1" />
+                          <span className="text-foreground">{dish}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </CardContent>
               </Card>
             ))}
