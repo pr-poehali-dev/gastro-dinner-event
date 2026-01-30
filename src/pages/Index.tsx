@@ -130,6 +130,7 @@ const Index = () => {
             <a href="#restaurants" className="hover:text-primary transition-colors">Рестораны</a>
             <a href="#program" className="hover:text-primary transition-colors">Программа</a>
             <a href="#drinks" className="hover:text-primary transition-colors">Напитки</a>
+            <a href="#cigar" className="hover:text-primary transition-colors">Сигарная веранда</a>
             <a href="#booking" className="hover:text-primary transition-colors">Билеты</a>
           </div>
           <Button className="gradient-purple-orange hover-scale">
@@ -317,7 +318,116 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Booking Section */}
+      {/* Cigar Lounge Section */}
+      <section id="cigar" className="py-20 px-4 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-accent/20 via-background to-primary/10"></div>
+        
+        <div className="container mx-auto relative z-10">
+          <h2 className="text-5xl font-bold text-center mb-6 gradient-text">
+            Сигарная веранда
+          </h2>
+          
+          <p className="text-center text-muted-foreground mb-12 text-lg max-w-3xl mx-auto">
+            Эксклюзивная зона для ценителей премиальных сигар и благородных напитков
+          </p>
+          
+          <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+            <Card className="bg-gradient-to-br from-card/90 to-card/70 backdrop-blur-sm border-accent/30 hover-scale">
+              <CardContent className="p-8">
+                <div className="flex items-start gap-4 mb-6">
+                  <div className="text-5xl">🍂</div>
+                  <div>
+                    <h3 className="text-2xl font-bold mb-3">Премиальная коллекция</h3>
+                    <p className="text-muted-foreground mb-4">
+                      Кубинские сигары ручной работы от ведущих производителей
+                    </p>
+                  </div>
+                </div>
+                
+                <ul className="space-y-3">
+                  <li className="flex items-start gap-3">
+                    <Icon name="Check" size={20} className="text-accent flex-shrink-0 mt-1" />
+                    <span><strong>Cohiba Behike 56</strong> — флагман кубинской индустрии</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <Icon name="Check" size={20} className="text-accent flex-shrink-0 mt-1" />
+                    <span><strong>Montecristo No. 2</strong> — классика жанра</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <Icon name="Check" size={20} className="text-accent flex-shrink-0 mt-1" />
+                    <span><strong>Partagás Serie D No. 4</strong> — насыщенный вкус</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <Icon name="Check" size={20} className="text-accent flex-shrink-0 mt-1" />
+                    <span><strong>Romeo y Julieta Churchill</strong> — элегантность</span>
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+            
+            <Card className="bg-gradient-to-br from-card/90 to-card/70 backdrop-blur-sm border-primary/30 hover-scale">
+              <CardContent className="p-8">
+                <div className="flex items-start gap-4 mb-6">
+                  <div className="text-5xl">🥃</div>
+                  <div>
+                    <h3 className="text-2xl font-bold mb-3">Благородные напитки</h3>
+                    <p className="text-muted-foreground mb-4">
+                      Тщательно подобранная карта крепких напитков для идеального сочетания
+                    </p>
+                  </div>
+                </div>
+                
+                <ul className="space-y-3">
+                  <li className="flex items-start gap-3">
+                    <Icon name="Check" size={20} className="text-primary flex-shrink-0 mt-1" />
+                    <span><strong>Cognac Rémy Martin Louis XIII</strong></span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <Icon name="Check" size={20} className="text-primary flex-shrink-0 mt-1" />
+                    <span><strong>Виски Glenfiddich 30 Year Old</strong></span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <Icon name="Check" size={20} className="text-primary flex-shrink-0 mt-1" />
+                    <span><strong>Ром Zacapa Centenario XO</strong></span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <Icon name="Check" size={20} className="text-primary flex-shrink-0 mt-1" />
+                    <span><strong>Armagnac Château de Laubade 1973</strong></span>
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+          </div>
+          
+          <div className="mt-12 max-w-4xl mx-auto">
+            <Card className="bg-gradient-to-r from-accent/10 via-primary/10 to-secondary/10 border-accent/20">
+              <CardContent className="p-8">
+                <div className="flex flex-col md:flex-row items-center gap-6">
+                  <div className="text-6xl">🏛️</div>
+                  <div className="flex-grow text-center md:text-left">
+                    <h3 className="text-2xl font-bold mb-2">Атмосфера роскоши</h3>
+                    <p className="text-muted-foreground">
+                      Панорамная веранда с видом на вечерний город, кожаные кресла, живая джазовая музыка и приватная обстановка для деловых бесед
+                    </p>
+                  </div>
+                  <div className="flex gap-4">
+                    <div className="text-center">
+                      <Icon name="Users" size={32} className="text-accent mx-auto mb-2" />
+                      <p className="text-sm text-muted-foreground">До 30 гостей</p>
+                    </div>
+                    <div className="text-center">
+                      <Icon name="Armchair" size={32} className="text-primary mx-auto mb-2" />
+                      <p className="text-sm text-muted-foreground">VIP-зона</p>
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Booking Section */
       <section id="booking" className="py-20 px-4 relative overflow-hidden">
         <div className="absolute inset-0 gradient-purple-orange opacity-10"></div>
         
